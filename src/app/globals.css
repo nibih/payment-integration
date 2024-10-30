@@ -1,17 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
+/* use new font */
 html {
+  font-family: "Plus Jakarta Sans", sans-serif;
+
   @apply bg-gradient-to-r from-orange-400 to-orange-800;
-  @apply h-full;
 }
-body {
-  @apply h-full;
-}
-div#__next {
-  @apply h-full;
-}
-main {
-  @apply h-full;
+@layer base {
+  :root {
+    --radius: 0.5rem
+  }
 }
