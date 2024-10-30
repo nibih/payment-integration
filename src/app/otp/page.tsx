@@ -15,7 +15,7 @@ export default function Otp() {
     // if otp is filled, move to register page
     if (otp.length === 6) {
       setStage("register");
-      redirect("/");
+      redirect("/register");
     }
   }, [otp]);
   return (

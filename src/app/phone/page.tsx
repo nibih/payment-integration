@@ -39,7 +39,7 @@ export default function Phone() {
                 alert("Nomor telepon tidak boleh kosong");
               } else {
                 setStage("otp");
-                redirect("/");
+                redirect("/otp");
               }
             }}
             className="m-2 rounded bg-red-500 px-2 py-2 text-xs text-white"
