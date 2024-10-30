@@ -1,6 +1,7 @@
 "use client";
 
 import { useRegister } from "@/context/RegisterContext";
+import { encryptPin } from "@/lib/encryption";
 import { redirect } from "next/navigation";
 import {
   InputOTP,
@@ -11,6 +12,15 @@ import { useEffect, useState } from "react";
 export default function Otp() {
   const { encryptedPin, setEncryptedPin, stage, setStage } = useRegister();
   const [pin, setPin] = useState("");
+  useEffect(() => {
+    // if pin is filled, encrypt and set to context
+    if (pin.length === 6) {
+      const encrypted = encryptPin(pin);
+      setEncryptedPin(encrypted);
+      setStage("confirm");
+      redirect("/");
+    }
+  }, [pin]);
   return (
     <>
       <h1 className="text-2xl">LRT X JakOne Pay</h1>
@@ -57,6 +67,13 @@ export default function Otp() {
           >
             Seluruh informasi kamu terlindungi
           </h3>
+          <div className="m-auto">
+            {/* copyright */}
+            <p className="text-xs text-gray-500 text-center mt-4">
+              © powered by
+            </p>
+            <img src="/Logo_BDKI.png" alt="Logo" className="h-5 mx-auto mb-4" />
+          </div>
         </div>
       </div>
     </>
