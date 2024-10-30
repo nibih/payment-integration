@@ -57,9 +57,8 @@ export default function Phone() {
       </div>
       <div className="m-auto">
         {/* copyright */}
-        <p className="mt-4 text-center text-xs text-gray-500">
-          © powered by JakOne Pay
-        </p>
+        <p className="mt-4 text-center text-xs text-gray-500">© powered by</p>
+        <img src="/Logo_BDKI.png" alt="Logo" className="mx-auto mb-4 h-5" />
       </div>
     </>
   );
