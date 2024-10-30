@@ -24,55 +24,50 @@ export default function Otp() {
   return (
     <>
       <h1 className="text-2xl">LRT X JakOne Pay</h1>
-      <div className="m-auto w-96 flex flex-col gap-3">
+      <div className="m-auto flex w-96 flex-col gap-3">
         {/* logo lrt */}
-        <img src="/Logo_LRT.png" alt="Logo" className="h-12 mx-auto mb-4" />
-        <h2 className="text-2xl font-light text-center mb-4">Buat PIN kamu!</h2>
+        <img src="/Logo_LRT.png" alt="Logo" className="mx-auto mb-4 h-12" />
+        <h2 className="mb-4 text-center text-2xl font-light">Buat PIN kamu!</h2>
         <InputOTP maxLength={6} value={pin} onChange={(pin) => setPin(pin)}>
           <InputOTPGroup className="grow justify-between">
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={0}
             />
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={1}
             />
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={3}
             />
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={2}
             />
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={4}
             />
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={5}
             />
           </InputOTPGroup>
         </InputOTP>
         {/* Tidak terima kode? */}
-        <div className="flex items-center flex-col justify-center">
-          <img src="/mascot.png" alt="Logo" className="w-9/12 mx-auto mb-4" />
-          <h3
-            className="
-            text-2xl
-            text-center
-            "
-          >
+        <div className="flex flex-col items-center justify-center">
+          <img src="/mascot.png" alt="Logo" className="mx-auto mb-4 w-9/12" />
+          <h3 className="text-center text-2xl">
             Seluruh informasi kamu terlindungi
           </h3>
           <div className="m-auto">
             {/* copyright */}
-            <p className="text-xs text-gray-500 text-center mt-4">
+            <p className="mt-4 text-center text-xs text-gray-500">
               © powered by
             </p>
-            <img src="/Logo_BDKI.png" alt="Logo" className="h-5 mx-auto mb-4" />
+            <img src="/Logo_BDKI.png" alt="Logo" className="mx-auto mb-4 h-5" />
           </div>
         </div>
       </div>

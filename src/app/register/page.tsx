@@ -8,9 +8,9 @@ export default function register() {
   return (
     <>
       <h1 className="text-2xl">LRT X JakOne Pay</h1>
-      <div className="m-auto w-96 flex flex-col gap-3">
+      <div className="m-auto flex w-96 flex-col gap-3">
         {/* logo lrt */}
-        <img src="/Logo_LRT.png" alt="Logo" className="h-12 mx-auto mb-4" />
+        <img src="/Logo_LRT.png" alt="Logo" className="mx-auto mb-4 h-12" />
         <Input
           className="bg-slate-200"
           type="tel"
@@ -40,7 +40,7 @@ export default function register() {
               redirect("/pin");
             }
           }}
-          className="mt-10 rounded px-2 py-2 bg-red-500 text-base text-white "
+          className="mt-10 rounded bg-red-500 px-2 py-2 text-base text-white"
         >
           Daftar
         </button>
@@ -48,8 +48,8 @@ export default function register() {
 
       <div className="m-auto">
         {/* copyright */}
-        <p className="text-xs text-gray-500 text-center mt-4">© powered by</p>
-        <img src="/Logo_BDKI.png" alt="Logo" className="h-5 mx-auto mb-4" />
+        <p className="mt-4 text-center text-xs text-gray-500">© powered by</p>
+        <img src="/Logo_BDKI.png" alt="Logo" className="mx-auto mb-4 h-5" />
       </div>
     </>
   );

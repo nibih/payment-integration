@@ -51,15 +51,15 @@ export default function Register() {
     //load pin component
     <>
       {show && (
-        <div className="fixed z-10 inset-0 bg-black bg-opacity-50">
-          <div className="bg-white w-96 mt-20 m-auto p-8 rounded-lg">
+        <div className="fixed inset-0 z-10 bg-black bg-opacity-50">
+          <div className="m-auto mt-20 w-96 rounded-lg bg-white p-8">
             <h1 className="text-2xl">Konfirmasi PIN kamu!</h1>
-            <p className="text-gray-500 text-sm">
+            <p className="text-sm text-gray-500">
               PIN yang kamu masukkan TIDAK SESUAI
             </p>
             <button
               onClick={() => setShow(false)}
-              className="bg-orange-800 text-white w-full py-2 mt-4 rounded-lg"
+              className="mt-4 w-full rounded-lg bg-orange-800 py-2 text-white"
             >
               Konfirmasi
             </button>
@@ -67,55 +67,50 @@ export default function Register() {
         </div>
       )}
       <h1 className="text-2xl">LRT X JakOne Pay</h1>
-      <div className="m-auto mt-10 w-96 flex flex-col gap-3">
+      <div className="m-auto mt-10 flex w-96 flex-col gap-3">
         {/* logo lrt */}
-        <img src="/Logo_LRT.png" alt="Logo" className="h-12 mx-auto mb-4" />
-        <h2 className="text-2xl font-light text-center mb-4">
+        <img src="/Logo_LRT.png" alt="Logo" className="mx-auto mb-4 h-12" />
+        <h2 className="mb-4 text-center text-2xl font-light">
           Konfirmasi PIN kamu!
         </h2>
         <InputOTP maxLength={6} value={pin} onChange={(pin) => setPin(pin)}>
           <InputOTPGroup className="grow justify-between">
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={0}
             />
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={1}
             />
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={3}
             />
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={2}
             />
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={4}
             />
             <InputOTPSlot
-              className="border-orange-500 border-2 border-b-4 px-5 py-6"
+              className="border-2 border-b-4 border-orange-500 px-5 py-6"
               index={5}
             />
           </InputOTPGroup>
         </InputOTP>
         {/* Tidak terima kode? */}
-        <div className="flex items-center flex-col justify-center">
-          <h3
-            className="
-            text-2xl
-            text-center
-            "
-          >
-            Konfirmasi PIN kamu!
-          </h3>
+        <div className="flex flex-col items-center justify-center">
+          <h3 className="text-center text-2xl">Konfirmasi PIN kamu!</h3>
         </div>
         <div className="m-auto">
           {/* copyright */}
-          <p className="text-xs text-gray-500 text-center mt-4">© powered by</p>
-          <img src="/Logo_BDKI.png" alt="Logo" className="h-5 mx-auto mb-4" />
+          <p className="mt-4 text-center text-xs text-gray-500">
+            © powered by
+          </p>
+          <img src="/Logo_BDKI.png" alt="Logo" className="mx-auto mb-4 h-5" />
         </div>
       </div>
     </>

@@ -11,25 +11,19 @@ export default function Phone() {
       <h1 className="text-2xl">LRT X JakOne Pay</h1>
       <div className="m-auto w-96">
         {/* logo lrt */}
-        <img src="/Logo_LRT.png" alt="Logo" className="h-12 mx-auto mb-4" />
-        <h2 className="text-xl font-light text-center mb-4">Selamat datang</h2>
-        <p
-          className="
-          text-sm
-          text-gray-500
-          mb-4
-          "
-        >
+        <img src="/Logo_LRT.png" alt="Logo" className="mx-auto mb-4 h-12" />
+        <h2 className="mb-4 text-center text-xl font-light">Selamat datang</h2>
+        <p className="mb-4 text-sm text-gray-500">
           Ekspresikan perjalananmu menggunakan LRT Pay
         </p>
 
         {/* Phone Number Label */}
-        <label className="block text-sm font-semibold text-gray-700 mb-1">
+        <label className="mb-1 block text-sm font-semibold text-gray-700">
           Nomor Telepon
         </label>
 
         {/* Phone Number Input and OTP Button */}
-        <div className="flex items-center border-2 border-red-500 rounded-lg overflow-hidden mb-4">
+        <div className="mb-4 flex items-center overflow-hidden rounded-lg border-2 border-red-500">
           <input
             type="tel"
             placeholder="Masukkan nomor telepon"
@@ -48,7 +42,7 @@ export default function Phone() {
                 redirect("/");
               }
             }}
-            className="m-2 rounded px-2 py-2 bg-red-500 text-xs text-white "
+            className="m-2 rounded bg-red-500 px-2 py-2 text-xs text-white"
           >
             Kirim OTP
           </button>
@@ -57,13 +51,13 @@ export default function Phone() {
         {/* Disclaimer */}
         <p className="text-sm text-gray-500">
           Seluruh transaksi aman, dengan melanjutkan proses ini. Menu{" "}
-          <span className="text-red-500 font-semibold">syarat & ketentuan</span>{" "}
+          <span className="font-semibold text-red-500">syarat & ketentuan</span>{" "}
           yang berlaku
         </p>
       </div>
       <div className="m-auto">
         {/* copyright */}
-        <p className="text-xs text-gray-500 text-center mt-4">
+        <p className="mt-4 text-center text-xs text-gray-500">
           © powered by JakOne Pay
         </p>
       </div>

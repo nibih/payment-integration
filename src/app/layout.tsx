@@ -12,10 +12,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="h-screen " lang="en">
-      <body className={`antialiased flex flex-col h-full w-full`}>
+    <html className="h-screen" lang="en">
+      <body className={`flex h-full w-full flex-col antialiased`}>
         <RegisterProvider>
-          <div className="bg-white mt-10 grow rounded-t-lg flex flex-col">
+          <div className="mt-10 flex grow flex-col rounded-t-lg bg-white">
             {children}
           </div>
         </RegisterProvider>
