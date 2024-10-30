@@ -1,22 +1,10 @@
 "use client";
-import React, {
-  createContext,
-  useState,
-  useContext,
-  ReactNode,
-  useEffect,
-} from "react";
-const PaymentContext = createContext({
-  method: "",
-  setMethod: (method: string) => {},
-});
-
+import { PaymentProvider } from "@/context/PaymentContext";
 export default function layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [method, setMethod] = useState("");
   return (
     <div
       className={
@@ -27,9 +15,7 @@ export default function layout({
         <button className="text-2xl text-gray-700">&larr;</button>
         <h2 className="text-xl font-semibold">Top Up LRTJPay</h2>
       </div>
-      <PaymentContext.Provider value={{ method, setMethod }}>
-        {children}
-      </PaymentContext.Provider>
+      <PaymentProvider>{children}</PaymentProvider>
     </div>
   );
 }

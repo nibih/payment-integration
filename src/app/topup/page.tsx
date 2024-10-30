@@ -1,40 +1,35 @@
 "use client";
-import { useContext } from "react";
-
+import { useRouter } from "next/navigation";
+import { usePayment } from "@/context/PaymentContext";
 export default function TopUpMethods() {
-  const { setMethod } = useContext(PaymentContext);
+  const router = useRouter();
+  const { setMethod } = usePayment();
   // Define the top-up methods with their icon paths
   const topUpMethods = [
     {
       title: "JakOne Mobile",
       description: "No administration fees via the JakOne Mobile App",
       icon: "/phone.png", // Path to icon in the public folder,
-      property: "jakone",
     },
     {
       title: "ATM Bank DKI",
       description: "Top up Martipay from nearest Bank DKI ATM",
       icon: "/atm.png",
-      property: "atm",
     },
     {
       title: "Other Bank",
       description: "Transfer anytime from your favourite Indonesia bank",
       icon: "/bank.png",
-      property: "other",
     },
     {
       title: "Debit Card",
       description: "Top up online using your debit card",
       icon: "/card.png",
-      property: "debit",
     },
   ];
 
   return (
     <div>
-      {/* Header */}
-
       {/* Page Title */}
       <div className="mb-6 flex items-center space-x-4">
         <img src="/money.png" alt="Top Up" className="h-12 w-12" />
@@ -49,6 +44,8 @@ export default function TopUpMethods() {
             className="flex cursor-pointer items-center rounded-lg bg-white p-4 shadow-sm hover:bg-gray-100"
             onClick={() => {
               // go to method subpage with method.title as the parameter
+              setMethod(method.title);
+              router.push(`/topup/method`);
             }}
           >
             {/* Dynamically Loaded Icon */}

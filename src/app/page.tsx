@@ -1,4 +1,5 @@
 "use client";
+import logger from "@/lib/logger";
 import { encryptPin } from "@/lib/encryption";
 import {
   InputOTP,
@@ -8,6 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import { useRegister } from "@/context/RegisterContext";
 import { redirect, useRouter } from "next/navigation";
+import { log } from "console";
 export default function Register() {
   // mock, so phone numbner is stored, otp is just a value that is stored
   // after phone is filled and button is pressed, load otp component
@@ -32,19 +34,24 @@ export default function Register() {
   }, [pin]);
   useEffect(() => {
     if (stage === "phone") {
+      logger.info("phone");
       router.push("/phone");
-    } else {
     }
     if (stage === "otp") {
+      logger.info("otp");
       router.push("/otp");
     }
     if (stage === "register") {
+      logger.info("register");
       router.push("/register");
     }
     if (stage === "pin") {
+      logger.info("pin");
       router.push("/pin");
     }
     if (stage === "confirm") {
+      // log
+      logger.info("confirm");
     }
   }, [stage]);
   return (

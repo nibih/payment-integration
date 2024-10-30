@@ -28,12 +28,7 @@ export const RegisterProvider = ({ children }: RegisterProviderProps) => {
   const [otp, setOtp] = useState("");
   const [stage, setStage] = useState("phone");
   const [encryptedPin, setEncryptedPin] = useState("");
-  useEffect(() => {
-    // console log state changes
-    console.log(phoneNumber);
-    console.log(otp);
-    console.log(stage);
-  }, [phoneNumber, otp, stage]);
+
   return (
     <RegisterContext.Provider
       value={{
