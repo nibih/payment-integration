@@ -1,7 +1,10 @@
 "use client";
+import logger from "@/lib/logger";
 import { usePayment } from "@/context/PaymentContext";
+import { useState } from "react";
 export default function method() {
   const { method } = usePayment();
+  const [amount, setAmount] = useState(0);
   const ammountOptions = [
     {
       title: "Rp 50.000",
@@ -62,6 +65,10 @@ export default function method() {
           <div
             key={index}
             className="flex cursor-pointer items-center rounded-lg border-2 bg-white p-4 shadow-sm hover:bg-gray-100"
+            onClick={() => {
+              // go to method subpage with method.title as the parameter
+              setAmount(option.value);
+            }}
           >
             <div className="mr-4 flex h-20 w-20 items-center justify-center rounded-full">
               <img
@@ -85,11 +92,34 @@ export default function method() {
       </h3>
       {/* input with placeholder "Rp 0" */}
       {/* but the Rp is always there */}
-      <input
-        type="number"
-        placeholder="0"
-        className="w-full rounded-lg border-2 p-4"
-      />
+      <div className="flex items-center gap-2">
+        <p className="text-lg font-semibold text-gray-800">Rp</p>
+        <input
+          type="text"
+          placeholder="0"
+          className="w-full rounded-lg border-2 p-4"
+          value={amount.toLocaleString("id-ID")}
+          onChange={(e) => {
+            const value = e.target.value.replace(/\./g, "");
+            setAmount(Number(value));
+          }}
+        />
+      </div>
+      {/* top up button */}
+      {/* bg-orange-800 text-white rounded-lg p-4 w-full */}
+      <button
+        className={`my-2 w-full rounded-lg p-4 text-white ${
+          amount === 0 ? "bg-gray-400" : "bg-orange-800"
+        }`}
+        disabled={amount === 0}
+        onClick={() => {
+          // log the amount with the logger
+          // alert
+          alert(`Top up amount: ${amount}`);
+        }}
+      >
+        Top Up
+      </button>
     </div>
   );
 }

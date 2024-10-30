@@ -34,24 +34,18 @@ export default function Register() {
   }, [pin]);
   useEffect(() => {
     if (stage === "phone") {
-      logger.info("phone");
       router.push("/phone");
     }
     if (stage === "otp") {
-      logger.info("otp");
       router.push("/otp");
     }
     if (stage === "register") {
-      logger.info("register");
       router.push("/register");
     }
     if (stage === "pin") {
-      logger.info("pin");
       router.push("/pin");
     }
     if (stage === "confirm") {
-      // log
-      logger.info("confirm");
     }
   }, [stage]);
   return (
