@@ -1,5 +1,4 @@
 "use client";
-import logger from "@/lib/logger";
 import { usePayment } from "@/context/PaymentContext";
 import { useState } from "react";
 export default function method() {
