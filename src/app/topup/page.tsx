@@ -1,25 +1,33 @@
+"use client";
+import { useContext } from "react";
+
 export default function TopUpMethods() {
+  const { setMethod } = useContext(PaymentContext);
   // Define the top-up methods with their icon paths
   const topUpMethods = [
     {
       title: "JakOne Mobile",
       description: "No administration fees via the JakOne Mobile App",
-      icon: "/phone.png", // Path to icon in the public folder
+      icon: "/phone.png", // Path to icon in the public folder,
+      property: "jakone",
     },
     {
       title: "ATM Bank DKI",
       description: "Top up Martipay from nearest Bank DKI ATM",
       icon: "/atm.png",
+      property: "atm",
     },
     {
       title: "Other Bank",
       description: "Transfer anytime from your favourite Indonesia bank",
       icon: "/bank.png",
+      property: "other",
     },
     {
       title: "Debit Card",
       description: "Top up online using your debit card",
       icon: "/card.png",
+      property: "debit",
     },
   ];
 
@@ -28,12 +36,8 @@ export default function TopUpMethods() {
       {/* Header */}
 
       {/* Page Title */}
-      <div
-        className="mb-6 flex 
-        items-center space-x-4
-      "
-      >
-        <img src="/money.png" alt="Top Up" className="w-12 h-12" />
+      <div className="mb-6 flex items-center space-x-4">
+        <img src="/money.png" alt="Top Up" className="h-12 w-12" />
         <h3 className="text-lg font-semibold text-gray-800">Top Up Methods</h3>
       </div>
 
@@ -42,14 +46,17 @@ export default function TopUpMethods() {
         {topUpMethods.map((method, index) => (
           <div
             key={index}
-            className="flex items-center p-4 bg-white rounded-lg shadow-sm hover:bg-gray-100 cursor-pointer"
+            className="flex cursor-pointer items-center rounded-lg bg-white p-4 shadow-sm hover:bg-gray-100"
+            onClick={() => {
+              // go to method subpage with method.title as the parameter
+            }}
           >
             {/* Dynamically Loaded Icon */}
-            <div className="w-20 h-20 rounded-full flex items-center justify-center mr-4">
+            <div className="mr-4 flex h-20 w-20 items-center justify-center rounded-full">
               <img
                 src={method.icon}
                 alt={`${method.title} icon`}
-                className="w-16 h-16 object-contain"
+                className="h-16 w-16 object-contain"
               />
             </div>
 
